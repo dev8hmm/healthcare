@@ -1,0 +1,208 @@
+<!--
+  Generated template for the CategoryMainPage page.
+  
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>HelathCare Myanmar</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-slides  class="slide" autoplay="3000" loop="true" speed="2000">
+        <ion-slide>
+          <img src="assets/imgs/sliderimg.jpg" width="100%">
+        </ion-slide>
+        <ion-slide >
+          <img src="assets/imgs/beauty.jpg" width="100%">
+        </ion-slide>
+        <ion-slide >
+          <img src="assets/imgs/nature.jpg" width="100%">
+        </ion-slide>
+      </ion-slides>
+  
+  
+  <!-- <ion-tabs tabbarPlacement="top" primary>
+    <ion-tab tabIcon="card" tabTitle="Questions" [root]="ArticalPagfe" [(rootParams)]="cardSetId"></ion-tab>
+    <ion-tab tabIcon="stats" tabTitle="Statistics" [root]="tab2" [rootParams]="cardSetId"></ion-tab>
+    <ion-tab tabIcon="settings" tabTitle="Settings" [root]="tab3" [rootParams]="cardSetId"></ion-tab>  
+  </ion-tabs> -->
+  
+  <ion-grid no-padding>
+    <ion-row class="tabs">
+      <ion-col col-4 no-padding>
+        <button no-padding class="tab-item exp" ion-button  (click)="getArtical()" text-capitalize [ngStyle]="{'background-color': btnArticalColor}">
+            ဆောင်းပါးများ 
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button class="tab-item"  (click)="getCalculation()" ion-button text-capitalize [ngStyle]="{'background-color': btnCalculationColor}">
+         တွက်ချက်ရန်
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button class="tab-item" (click)="getGuide()"   ion-button text-capitalize [ngStyle]="{'background-color': btnGuideColor}">
+            လမ်းညွှန် 
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+ <div  *ngIf="artical =='artical'">
+    <!-- class="{{'artical-list '+ artical }}" -->
+  <ion-grid padding class="artical-list" >
+    <ion-row>
+      <ion-col col-4 no-padding *ngFor="let item of items">
+        <ion-card no-padding margin-bottom (click)="getDataByCategory(item)" width="100%" class="mycard">
+          <!-- <img src="{{'assets/imgs/' + item.image}}"   alt="" width="100%" height="100%">
+          <div class="ptitle"text-center>{{item.name}}</div>
+ -->
+          <img src="{{item.image}}"   alt="" width="100%" height="100%">
+          <div class="ptitle">
+            <div class="ctext">{{item.name}}</div>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ </div>
+
+
+ <div  *ngIf="artical =='calculation'">
+    <ion-grid padding class="artical-list" >
+        <ion-row>
+          <ion-col col-4 no-padding *ngFor="let item of items">
+            <ion-card no-padding margin-bottom (click)="goCalculate(item)" width="100%" class="mycard">
+              <img src="{{'assets/imgs/' + item.image}}"  alt="" width="100%" height="100%">
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+</div>
+<div *ngIf="artical =='guide'" no-padding>
+    <ion-list no-padding>
+        <button class="ptext" ion-item *ngFor="let item of items" (click)="getDataByCategory(item.id)" padding-left padding-right>
+          {{item.name}}
+        </button>
+      </ion-list>
+</div>
+
+  
+  
+  <!-- <ion-grid padding-left padding-right>
+    <ion-row>
+      <ion-col col-4 no-padding>
+        <ion-card no-padding>
+          <img src="assets/imgs/myosat.jpg" alt="">
+          <div text-center>Beauty</div>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4 no-padding>
+        <ion-card>
+          <img src="assets/imgs/beauty.jpg" alt="">
+          <div text-center>Beauty</div>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4 no-padding>
+        <ion-card>
+          <img src="assets/imgs/ayaypyar.jpg" alt="">
+          <div text-center>Beauty</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 no-padding>
+        <ion-card>
+          <img src="assets/imgs/food_health.jpg" alt="">
+          <div text-center>Beauty</div>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4 no-padding>
+        <ion-card>
+          <img src="assets/imgs/satehealth.jpg" alt="">
+          <div text-center>Beauty</div>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4 no-padding>
+        <ion-card>
+          <img src="assets/imgs/important.jpg" alt="">
+          <div text-center>Beauty</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 no-padding>
+        <ion-card>
+          <img src="assets/imgs/kowins.jpg" alt="">
+          <div text-center>Beauty</div>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4 no-padding>
+        <ion-card>
+          <img src="assets/imgs/kalay.jpg" alt="">
+          <div text-center>Beauty</div>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4 no-padding>
+        <ion-card>
+          <img src="assets/imgs/kuusat.jpg" alt="">
+          <div text-center>Beauty</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col col-4 no-padding>
+        <ion-card>
+          <img src="assets/imgs/makuusat.jpg" alt="">
+          <div text-center>Beauty</div>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4 no-padding>
+        <ion-card>
+          <img src="assets/imgs/nature.jpg" alt="">
+          <div text-center>Beauty</div>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4 no-padding>
+        <ion-card>
+          <img src="assets/imgs/tineyinsay.jpg" alt="">
+          <div text-center>Beauty</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+-->
+
+
+
+
+
+
+<!-- <ion-list>
+  <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+    <ion-icon [name]="item.icon" item-start></ion-icon>
+    {{item.name}}
+  </button>
+</ion-list> -->
+<!-- <div class="row">
+  <button ion-button color="secondary" float-left>Secondary</button>
+  <button ion-button color="secondary" float-left>Secondary</button>
+  <button ion-button color="secondary" float-left>Secondary</button>
+</div> -->
+
+<!-- <div>
+  <ion-tabs color="androidprimary" [selectedIndex]="1">
+    <ion-tab [root]="tab2Root"  tabTitle="Music"></ion-tab>
+    <ion-tab [root]="tab1Root"  tabTitle="Music"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="Music"></ion-tab>
+  </ion-tabs>
+</div> -->
+</ion-content>

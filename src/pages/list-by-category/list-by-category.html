@@ -1,0 +1,39 @@
+<!--
+  Generated template for the ListByCategoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-row>
+    <ion-col col-12 no-padding *ngFor="let item of items">
+      <ion-card no-padding >
+        <ion-row>
+        <ion-col col-5>
+            <img  src="{{item.image}}" alt=""  height="60%">
+        </ion-col>
+        <ion-col col-7>
+            <div class="title" ><b>{{item.title}}</b></div>
+            <div class="post">{{  item.abb }}</div>
+            <button ion-button small class="readmore" text-capitalize (click)="goDetail(item)">Read More</button>
+            <p class="p" text-right padding-right>{{item.postdate}}</p>
+        </ion-col>
+      </ion-row>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

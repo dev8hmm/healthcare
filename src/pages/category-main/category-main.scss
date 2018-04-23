@@ -1,0 +1,56 @@
+page-category-main {
+  .tabs,.header{
+    background-color:#126b12;
+  }
+  .tab-item{
+    background-color:#136615;
+    width: 100%;
+    border-left: 1px solid #fff;
+    font-size: 12px;
+  }
+  .slide{
+    height: 200px;
+  }
+
+  .line{
+    background-color: #fff;
+
+  }
+  .exp{
+    border-left: none;
+  }
+
+  .ptitle{
+    font-size: 12px;
+    height: 36px;
+    margin-bottom: 5px;
+  }
+  .artical-list ion-card{
+    width: 95%;
+
+  }
+
+  .mycard{
+    margin: 0 auto;
+  }
+
+  .artical{
+
+  }
+  .calculation .ptitle {
+      height: 0;
+      margin-bottom: 0;
+  }
+  .ptext{
+     margin: 8px;
+  }
+
+  .ptitle{
+    text-align: center;
+  }
+  .ctext{
+    margin-top: 5px;
+    display: inline-block;
+  }
+  
+}
